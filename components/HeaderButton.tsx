@@ -1,11 +1,20 @@
 import { forwardRef } from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Pressable, StyleSheet } from 'react-native';
+import { router } from 'expo-router';
 
 export const HeaderButton = forwardRef<typeof Pressable, { onPress?: () => void }>(
   ({ onPress }, ref) => {
+    const handlePress = () => {
+      if (onPress) {
+        onPress();
+      } else {
+        router.push('/modal');
+      }
+    };
+
     return (
-      <Pressable onPress={onPress}>
+      <Pressable onPress={handlePress}>
         {({ pressed }) => (
           <FontAwesome
             name="info-circle"
