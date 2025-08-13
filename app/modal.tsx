@@ -20,7 +20,7 @@ export default function Modal() {
       
       {/* Content */}
       <ScrollView className="flex-1 px-5">
-        <View className="bg-white rounded-xl p-5 mb-4 shadow-sm">
+        <View className="bg-white rounded-xl p-5 mb-4 shadow-sm mt-5">
           <Text className="text-lg font-semibold text-gray-900 mb-3">About This App</Text>
           <Text className="text-sm text-gray-600 leading-5 mb-2">
             This is a Point of Sale (POS) system designed to help you manage your business operations efficiently.
