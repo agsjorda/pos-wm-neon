@@ -8,7 +8,8 @@ export default function TabLayout() {
         tabBarActiveTintColor: '#007AFF',
         tabBarInactiveTintColor: '#8E8E93',
         headerShown: false, // Hide header since drawer will handle it
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -30,6 +31,14 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="orders"
+        options={{
+          title: 'Orders',
+          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} />,
+        }}
+      />
     </Tabs>
   );
 }
+
