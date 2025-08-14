@@ -1,26 +1,37 @@
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTheme } from '../../../lib/themeContext';
 
 export default function Home() {
+  const { isDarkMode } = useTheme();
+
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <View style={styles.header}>
-          <Text style={styles.title}>Welcome Home</Text>
-          <Text style={styles.subtitle}>Your POS System Dashboard</Text>
+    <SafeAreaView className={`flex-1 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <ScrollView className="flex-1 p-5">
+        <View className="items-center mb-8 pt-5">
+          <Text className={`text-4xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+            Welcome Home
+          </Text>
+          <Text className={`text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-center`}>
+            Your POS System Dashboard
+          </Text>
         </View>
         
-        <View style={styles.content}>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>Quick Actions</Text>
-            <Text style={styles.cardText}>
+        <View className="flex-1">
+          <View className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-5 mb-4 shadow-md`}>
+            <Text className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+              Quick Actions
+            </Text>
+            <Text className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} leading-5`}>
               Use the drawer menu to navigate through different sections of your POS system.
             </Text>
           </View>
           
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>System Status</Text>
-            <Text style={styles.cardText}>
+          <View className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-5 mb-4 shadow-md`}>
+            <Text className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'} mb-2`}>
+              System Status
+            </Text>
+            <Text className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} leading-5`}>
               All systems are running smoothly. You're ready to process transactions.
             </Text>
           </View>
@@ -29,58 +40,3 @@ export default function Home() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f8f9fa',
-  },
-  scrollContent: {
-    flexGrow: 1,
-    padding: 20,
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: 30,
-    paddingTop: 20,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#1a1a1a',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#666',
-    textAlign: 'center',
-  },
-  content: {
-    flex: 1,
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 20,
-    marginBottom: 16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#1a1a1a',
-    marginBottom: 8,
-  },
-  cardText: {
-    fontSize: 14,
-    color: '#666',
-    lineHeight: 20,
-  },
-});
