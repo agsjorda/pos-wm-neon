@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTheme } from '../../../lib/themeContext';
+import { useTheme } from '~/lib/themeContext';
 
 export default function Home() {
   const { isDarkMode } = useTheme();
