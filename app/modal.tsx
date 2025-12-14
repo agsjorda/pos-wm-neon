@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Pressable } from 'react-native';
-import { useTheme } from '../lib/themeContext';
+import { useTheme } from '../lib/stores/themeStore';
 
 export default function Modal() {
   const { isDarkMode } = useTheme();

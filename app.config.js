@@ -1,0 +1,40 @@
+module.exports = {
+  expo: {
+    name: "pos-wm-neondb",
+    slug: "pos-wm-neondb",
+    version: "1.0.0",
+    scheme: "pos-wm-neondb",
+    web: {
+      bundler: "metro",
+      output: "static",
+      favicon: "./assets/favicon.png"
+    },
+    plugins: ["expo-router", "expo-web-browser"],
+    experiments: {
+      typedRoutes: true,
+      tsconfigPaths: true
+    },
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "light",
+    splash: {
+      image: "./assets/splash.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    assetBundlePatterns: ["**/*"],
+    ios: {
+      supportsTablet: true
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#ffffff"
+      }
+    },
+    extra: {
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY
+    }
+  }
+};

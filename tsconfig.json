@@ -6,6 +6,9 @@
     "paths": {
       "~/*": [
         "*"
+      ],
+      "@/*": [
+        "*"
       ]
     },
     "allowJs": true,
@@ -18,7 +21,9 @@
     "lib": [
       "esnext"
     ],
-    "module": "esnext"
+    "module": "esnext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": [
     "**/*.ts",

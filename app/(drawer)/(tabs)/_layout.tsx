@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import { TabBarIcon } from '../../../components/TabBarIcon';
-import { useTheme } from '../../../lib/themeContext';
+import { useTheme } from '../../../lib/stores/themeStore';
 
 export default function TabLayout() {
   const { isDarkMode } = useTheme();

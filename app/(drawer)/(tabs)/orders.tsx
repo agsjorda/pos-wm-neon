@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import { useTheme } from '../../../lib/themeContext';
+import { useTheme } from '../../../lib/stores/themeStore';
 
 export default function OrdersPageLayout() {
   const { isDarkMode } = useTheme();

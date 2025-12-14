@@ -1,6 +1,6 @@
 import { Drawer } from 'expo-router/drawer';
 import { HeaderButton } from '~/components/HeaderButton';
-import { useTheme } from '../../lib/themeContext';
+import { useTheme } from '../../lib/stores/themeStore';
 
 export default function DrawerLayout() {
   const { isDarkMode } = useTheme();

@@ -1,0 +1,17 @@
+# Supabase Configuration
+# This config is used for local development with `supabase start`
+
+project_id = "pos-wm-neondb"
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+
+[studio]
+port = 54323
+
+[auth]
+site_url = "http://localhost:8081"
+enable_signup = true

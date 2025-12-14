@@ -1,7 +1,7 @@
 import { StyleSheet, View, Text, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useTheme } from '../../lib/themeContext';
+import { useTheme } from '../../lib/stores/themeStore';
 
 export default function AdminPanel() {
   const { isDarkMode } = useTheme();
