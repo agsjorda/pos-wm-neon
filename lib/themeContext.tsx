@@ -12,14 +12,14 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const colorScheme = useColorScheme();
-  const [isDarkMode, setIsDarkMode] = useState(colorScheme === 'dark');
+  const systemColorScheme = useColorScheme();
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    setIsDarkMode(colorScheme === 'dark');
-  }, [colorScheme]);
+    setIsDarkMode(systemColorScheme === 'dark');
+  }, [systemColorScheme]);
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
